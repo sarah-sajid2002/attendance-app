@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark Attendance</title>
+    <!-- Add Bootstrap CSS link -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/checkIn.css" />
+    <style>
+      /* Center the form on the page */
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <!-- Your Bootstrap form goes here -->
+          <form action="/checkIn" method="post">
+            <% if (typeof error !== 'undefined' && error !== null && error !==
+            "") { %>
+            <h3 class="oops">OOPS</h3>
+            <div class="alert alert-error"><%= error %></div>
+            <% } %>
+            <div class="form-group">
+              <label for="exampleInputId">ID:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="id"
+                id="exampleInputId"
+                placeholder="Enter ID"
+              />
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links (required for some Bootstrap features) -->
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/adminDashboard.css" />
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: hsl(120, 60%, 40%)"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SMIT Attendance Application</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- 'ms-auto' pushes items to the right -->
+            <li class="nav-item">
+              <a class="nav-link active" href="/adminDashboard"
+                >Admin Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/createStudent"
+                >Create Student ➕</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#AllStudents"
+                >All Students <i class="fas fa-user"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/attendance"
+                >Attendance <i class="far fa-file"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="/logout">Logout</a>
+              <!-- 'text-danger' for red color -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- showing All students -->
+    <div class="allStudentsDiv" id="AllStudents">
+      <h3>All Students</h3>
+      <div class="bar" id="top">
+        <img src="/images/uploads/1.png" alt="" />
+        <ul class="barUl">
+          <li>Name</li>
+          <li>last name</li>
+          <li>phone number</li>
+          <li>email</li>
+          <li>id</li>
+          <li>Course Name</li>
+          <li>Edit</li>
+          <li>Delete</li>
+        </ul>
+      </div>
+
+      <% user.forEach(function(elem){ %> <% if(elem.role === "student"){%>
+      <div class="bar">
+        <img src="/images/uploads/<%= elem.file %>" alt="" />
+        <ul>
+          <li><%= elem.username %></li>
+          <li><%= elem.lastName %></li>
+          <li><%= elem.phoneNumber %></li>
+          <li><%= elem.email %></li>
+          <li><%= elem.id %></li>
+          <li><%= elem.course %></li>
+          <li>
+            <a href="/editStudent/<%= elem._id %>"
+              ><i class="fas fa-edit"></i
+            ></a>
+          </li>
+          <li>
+            <a href=""><i class="fas fa-trash"></i></a>
+          </li>
+        </ul>
+      </div>
+      <%}%> <% }) %>
+    </div>
+
+    <!-- Bootstrap JS (optional, but required for some features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("allStudentsLink")
+          .addEventListener("click", function () {
+            document
+              .getElementById("allStudentsHeading")
+              .scrollIntoView({ behavior: "smooth" });
+          });
+      });
+    </script>
+  </body>
+</html>

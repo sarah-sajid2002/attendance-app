@@ -1,0 +1,68 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(230, 252, 218);
+}
+.main {
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card {
+  width: 18rem;
+}
+.card {
+  height: 600px;
+  margin-bottom: 20px;
+}
+.card:nth-child(2) {
+  overflow-y: scroll;
+}
+h1 {
+  text-transform: uppercase;
+}
+span {
+  color: rgb(71, 70, 70);
+}
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
+}
+a:hover {
+  color: rgb(255, 255, 255);
+}
+button {
+  margin-top: 30px;
+  margin-right: 20px;
+}
+.cred {
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  background-color: rgb(187, 255, 196);
+}
+.cred .label {
+  color: gray;
+  text-transform: capitalize;
+  width: 100px;
+}
+.card-body {
+  height: 600px;
+}
+img {
+  height: 200px;
+}
+.attendanceList {
+  list-style: none;
+  background-color: rgb(187, 255, 196);
+  padding: 5px 50px;
+  border-radius: 10px;
+}

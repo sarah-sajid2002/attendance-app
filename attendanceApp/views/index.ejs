@@ -1,0 +1,32 @@
+<!-- index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <title>Login | Attendance</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <!-- Ensure the action attribute is set to "/login" and the method is "post" -->
+      <form action="/login" method="post">
+        <div class="form-control">
+          <% if(error.length>0){%>
+          <p style="color: red"><%= error %></p>
+          <%}%>
+          <input type="text" required name="username" />
+          <label>username</label>
+        </div>
+        <div class="form-control">
+          <input type="password" required name="password" />
+          <label>Password</label>
+        </div>
+        <button class="btn">Login</button>
+      </form>
+    </div>
+    <script src="/javascripts/index.js"></script>
+  </body>
+</html>

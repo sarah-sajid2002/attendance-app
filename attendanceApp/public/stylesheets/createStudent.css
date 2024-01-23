@@ -1,0 +1,33 @@
+body {
+  background-color: #def7da;
+}
+.container {
+  max-width: 50%;
+  margin: auto;
+  border: 6px solid #99e38c;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #fff;
+}
+.btn-primary {
+  background-color: #94fd7c;
+  border-color: #032802;
+}
+.btn-primary:hover {
+  background-color: #94fd7c;
+}
+.errorDiv {
+  text-align: center;
+  color: red;
+}
+.navbar-nav .nav-item {
+  margin-right: 25px;
+  background-color: hsl(120, 17%, 27%); /* Dark Green */
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.navbar-nav .nav-item:hover {
+  background-color: hsl(120, 15%, 40%); /* Lighter Green on Hover */
+}

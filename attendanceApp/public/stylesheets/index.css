@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* Updated styles for green theme */
+
+:root {
+  --white: hsl(100, 0%, 100%);
+  --primary-light: hsl(120, 70%, 75%);
+  --primary: hsl(120, 60%, 60%);
+  --primary-dark: hsl(120, 50%, 50%);
+
+  --greyLight-1: hsl(90, 5%, 95%);
+  --greyLight-2: hsl(80, 3%, 85%);
+  --greyDark: hsl(75, 5%, 75%);
+
+  --background: var(--greyLight-1);
+  --onBackground: var(--greyDark);
+
+  --surface: var(--primary);
+  --onSurface: var(--white);
+  --onSurface-Dark: hsl(120, 60%, 40%);
+
+  --shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+body {
+  background-color: var(--background);
+}
+
+.container {
+  background-color: var(--background);
+  color: var(--onBackground);
+  box-shadow: var(--shadow);
+}
+
+.container a {
+  color: var(--onSurface-Dark);
+}
+
+.form-control input {
+  border-bottom: 0.125rem var(--onBackground) solid;
+  color: var(--onBackground);
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  border-bottom-color: var(--greyLight-2);
+}
+
+.btn {
+  background: var(--surface);
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light),
+    inset -0.2rem -0.2rem 1rem var(--primary-dark), var(--shadow);
+  color: var(--greyLight-1);
+}
+
+.btn:hover {
+  color: var(--onSurface);
+}
+
+.btn:active {
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark),
+    inset -0.2rem -0.2rem 1rem var(--primary-light);
+  color: var(--onSurface);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  background-color: var(--background);
+  color: var(--onBackground);
+  padding: 1.25rem 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  color: rgb(103, 100, 100);
+  text-align: center;
+  padding-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.container a {
+  text-decoration: none;
+  color: var(--onSurface-Dark);
+}
+
+.form-control {
+  position: relative;
+  margin: 1.25rem 0 2.5rem 0;
+  width: 18.75rem;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 0.125rem var(--onBackground) solid;
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.2rem;
+  color: var(--onBackground);
+  font-weight: 400;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: var(--greyLight-2);
+}
+
+.form-control label {
+  color: rgb(103, 100, 100);
+  position: absolute;
+  top: 0.9rem;
+  left: 0;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 1.2rem;
+  min-width: 0.3rem;
+  transition: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: var(--greyLight-2);
+  transform: translateY(-1.875rem);
+  font-size: 1rem;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: var(--surface);
+  padding: 0.9rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: 0;
+  border-radius: 0.8rem;
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light),
+    inset -0.2rem -0.2rem 1rem var(--primary-dark), var(--shadow);
+  color: var(--greyLight-1);
+  transition: 300ms ease;
+  font-weight: 500;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:hover {
+  color: var(--onSurface);
+}
+
+.btn:active {
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark),
+    inset -0.2rem -0.2rem 1rem var(--primary-light);
+  color: var(--onSurface);
+}
+
+.text {
+  margin-top: 1.875rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+}

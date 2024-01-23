@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheets/createStudent.css" />
+    <title>Student Registration Form</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: hsl(120, 60%, 40%)"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SMIT Attendance Application</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- 'ms-auto' pushes items to the right -->
+            <li class="nav-item">
+              <a class="nav-link active" href="/adminDashboard"
+                >Admin Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/createStudent"
+                >Create Student ➕</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/adminDashboard"
+                >All Students <i class="fas fa-user"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/attendance"
+                >Attendance <i class="far fa-file"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="/logout">Logout</a>
+              <!-- 'text-danger' for red color -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- create -->
+    <div class="container">
+      <h2 class="mb-4 text-center">Student Registration Form</h2>
+      <div class="errorDiv">
+        <% if (typeof error !== 'undefined' && error !== null && error !== "") {
+        %>
+        <h3 class="oops">OOPS</h3>
+        <div class="alert alert-error"><%= error %></div>
+        <% } %>
+      </div>
+      <form action="/createStudent" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            name="lastName"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course:</label>
+          <select class="form-control" id="course" name="course" required>
+            <option value="web dev">Web Development</option>
+            <option value="3d animation">3D Animation</option>
+            <option value="ai">Artificial Intelligence</option>
+            <option value="machine learning">Machine Learning</option>
+            <option value="web3">Web3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number:</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phoneNumber"
+            name="phoneNumber"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">id:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="password"
+            name="id"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">student image:</label>
+          <input
+            type="file"
+            class="form-control"
+            id="password"
+            name="file"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

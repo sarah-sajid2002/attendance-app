@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/attendance.css" />
+    <title>All Attendance</title>
+  </head>
+  <body>
+    <!-- nav -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: hsl(120, 60%, 40%)"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SMIT Attendance Application</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- 'ms-auto' pushes items to the right -->
+            <li class="nav-item">
+              <a class="nav-link active" href="/adminDashboard"
+                >Admin Dashboard</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/createStudent"
+                >Create Student ➕</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="adminDashboard"
+                >All Students <i class="fas fa-user"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/attendance"
+                >Attendance <i class="far fa-file"></i>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="/logout">Logout</a>
+              <!-- 'text-danger' for red color -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- showing All students -->
+    <div class="allStudentsDiv" id="AllStudents">
+      <h3>Attendance History</h3>
+      <div class="bar" id="top">
+        <ul class="barUl">
+          <li>full name</li>
+          <li>check in Date</li>
+          <li>check in time</li>
+          <li>Status</li>
+        </ul>
+      </div>
+
+      <% user.forEach(function(user) { %> <% if(user.role != "admin") { %>
+      <div class="mainBox">
+        <% if(user.attendance.length > 0) { %> <%
+        user.attendance.forEach(function(entry) { %>
+        <div class="bar">
+          <ul>
+            <li><%= user.username %> <%= user.lastName %></li>
+            <li><%= entry.date %></li>
+            <li><%= entry.timestamp %></li>
+            <li><%= entry.attendanceStatus %></li>
+          </ul>
+        </div>
+        <% }) %> <% } %>
+      </div>
+      <% } %> <% }) %>
+    </div>
+  </body>
+</html>
